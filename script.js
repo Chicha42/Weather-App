@@ -66,13 +66,10 @@ document.getElementById('searchCityBtn').addEventListener('click', () => {
 });
 
 document.getElementById('searchCoordsBtn').addEventListener('click', () => {
-    const lat = document.getElementById('latInput').value;
-    const lon = document.getElementById('lonInput').value;
+    const lat = parseFloat(document.getElementById('latInput').value);
+    const lon = parseFloat(document.getElementById('lonInput').value);
 
-    if (lat === '' || lon === '') {
-        document.getElementById('coordsError').classList.remove('hidden');
-        showError('coords', 'Пожалуйста, введите широту и долготу');
-    } else if (typeof lat !== 'number' || typeof lon !== 'number') {
+    if (isNaN(lat) || isNaN(lon)) {
         document.getElementById('coordsError').classList.remove('hidden');
         showError('coords', 'Введены некорректные данные');
     } else {
