@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   weather_app:
+    pull_policy: build
     build: .
     container_name: weather_app
     ports:
