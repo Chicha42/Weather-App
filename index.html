@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода + Карта</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Weather App</h1>
+
+<div class="container">
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="city">По городу</button>
+        <button class="tab-btn" data-tab="coords">По координатам</button>
+    </div>
+
+    <div id="cityTab" class="tab-content active">
+        <div class="input-container">
+            <input type="text" id="cityInput" placeholder="Введите город" autocomplete="off">
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+
+        <button id="searchCityBtn" class="search-btn">Показать погоду</button>
+        <div id="cityError" class="error"></div>
+
+        <div id="cityWidget" class="weather-widget hidden">
+            <div class="weather-header">
+                <div class="weather-icon">
+                    <img id="cityIcon" class="weather-img" src="" alt="icon">
+                    <h3 id="cityTemp"></h3>
+                </div>
+                <div class="city-info">
+                    <h3 id="cityName"></h3>
+                    <h3 id="cityCountryName"></h3>
+                </div>
+            </div>
+            <div class="weather-info">
+                <p id="cityWind"></p>
+                <p id="cityDesc"></p>
+                <p id="cityTime"></p>
+            </div>
+            <iframe id="cityMap" class="map" src=""></iframe>
+        </div>
+        <div id="cityHistory"></div>
+    </div>
+
+    <div id="coordsTab" class="tab-content">
+        <input type="text" id="latInput" placeholder="Широта (например, 55.75)" autocomplete="off">
+        <input type="text" id="lonInput" placeholder="Долгота (например, 37.61)" autocomplete="off">
+
+        <button id="searchCoordsBtn" class="search-btn">Показать погоду</button>
+        <div id="coordsError" class="error"></div>
+
+        <div id="coordsWidget" class="weather-widget hidden">
+            <div class="weather-header">
+                <div class="weather-icon">
+                    <img id="coordsIcon" class="weather-img" src="" alt="icon">
+                    <h3 id="coordsTemp"></h3>
+                </div>
+                <div class="city-info">
+                    <h3 id="coordsName"></h3>
+                    <h3 id="coordsCountryName"></h3>
+                </div>
+            </div>
+            <div class="weather-info">
+                <p id="coordsWind"></p>
+                <p id="coordsDesc"></p>
+                <p id="coordsTime"></p>
+            </div>
+            <iframe id="coordsMap" class="map" src=""></iframe>
+        </div>
+        <div id="coordsHistory"></div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
