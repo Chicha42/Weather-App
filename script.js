@@ -58,6 +58,7 @@ document.addEventListener('click', (e) => {
 document.getElementById('searchCityBtn').addEventListener('click', () => {
     const city = cityInput.value;
     if (city === '') {
+        document.getElementById('cityError').classList.remove('hidden');
         showError('city', 'Пожалуйста, введите название города');
     } else {
         loadWeather(city, 'city');
@@ -69,8 +70,10 @@ document.getElementById('searchCoordsBtn').addEventListener('click', () => {
     const lon = document.getElementById('lonInput').value;
 
     if (lat === '' || lon === '') {
+        document.getElementById('coordsError').classList.remove('hidden');
         showError('coords', 'Пожалуйста, введите широту и долготу');
     } else if (typeof lat !== 'number' || typeof lon !== 'number') {
+        document.getElementById('coordsError').classList.remove('hidden');
         showError('coords', 'Введены некорректные данные');
     } else {
         loadWeather(`${lat},${lon}`, 'coords');
