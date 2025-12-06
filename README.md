@@ -60,7 +60,7 @@
 ## Деплой
 
 Приложение задеплоено на сервер: [weather42.jgroup.top](https://weather42.jgroup.top)  
-В репозитории находятся файлы Dockerfile и docker-compose.yml
+В репозитории находятся файлы Dockerfile, docker-compose.yml, nginx.conf и weather42.conf
  
 ---
 
